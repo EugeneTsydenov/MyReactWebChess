@@ -1,0 +1,5 @@
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-color: var(--primary-black);
+    color: var(--primary-white)
+}
