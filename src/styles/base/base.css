@@ -3,3 +3,7 @@ body {
     background-color: var(--primary-black);
     color: var(--primary-white)
 }
+
+.active {
+    color: var(--secondary-yellow);
+}

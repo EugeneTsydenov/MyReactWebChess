@@ -1,3 +1,8 @@
 .Text {
     font-size: 20px;
+    transition: color .3s ease;
+}
+
+.Text:hover {
+    color: var(--secondary-yellow);
 }

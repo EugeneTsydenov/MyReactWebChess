@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import styles from './NavItemComponent.module.css'
 
 const NavItemComponent = ({link}) => {
 	return (
 		<li>
-			<Link to={'/' + link}>
+			<NavLink to={'/' + link}>
 				<p className={styles.Text}>
 					{link}
 				</p>
-			</Link>
+			</NavLink>
 		</li>
 	);
 };

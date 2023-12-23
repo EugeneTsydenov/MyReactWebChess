@@ -41,9 +41,14 @@
 .Header__login {
     font-size: 25px;
     font-weight: 500;
-    color: #c0a854;
+    color: var(--secondary-yellow);
 }
 
 .Logo {
     font-size: 40px;
+    transition: color .3s ease;
+}
+
+.Logo:hover {
+    color: var(--secondary-yellow);
 }
