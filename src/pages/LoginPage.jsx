@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from "../layouts/Layout.jsx";
 
-const OnlineChessPage = () => {
+const LoginPage = () => {
 	return (
 		<Layout>
-			Online Chess
+			Login
 		</Layout>
 	);
 };
 
-export default OnlineChessPage;
+export default LoginPage;

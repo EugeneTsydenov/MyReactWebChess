@@ -3,6 +3,7 @@ import NavComponent from "../NavComponent/NavComponent.jsx";
 import searchLoop from '../../assets/images/searchLoop.svg';
 import settings from '../../assets/images/settings.svg';
 import styles from './Header.module.css'
+import {Link} from "react-router-dom";
 
 
 const Header = () => {
@@ -11,9 +12,11 @@ const Header = () => {
 			<div className='container-fluid'>
 				<div className={styles.Header__wrapper}>
 					<div className={styles.HeaderLeftWrapper}>
-						<h1 className={styles.Logo}>
-							ChessHub
-						</h1>
+						<Link to='/'>
+							<h1 className={styles.Logo}>
+								ChessHub
+							</h1>
+						</Link>
 						<NavComponent/>
 					</div>
 					<div className={styles.HeaderRightWrapper}>
@@ -25,9 +28,9 @@ const Header = () => {
 								<img className={styles.Header__img} src={settings} alt="Settings"/>
 							</button>
 						</div>
-						<button>
+						<Link to='/Login'>
 							<span className={styles.Header__login}>Login</span>
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

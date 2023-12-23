@@ -1,4 +1,5 @@
 :root {
-    --primary-black: #302626;
-    --primary-white: #B5ABAB;
+    --main-font: 'Alegreya Sans SC', sans-serif;
+    --primary-black: #110f0f;
+    --primary-white: #d9d2d2;
 }
