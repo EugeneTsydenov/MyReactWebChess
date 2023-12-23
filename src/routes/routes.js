@@ -1,4 +1,4 @@
-import HomePage from "../pages/PlayPages/HomePage.jsx";
+import HomePage from "../pages/HomePage.jsx";
 import OnlineChessPage from "../pages/PlayPages/OnlineChessPage.jsx";
 import BotChessPage from "../pages/PlayPages/BotChessPage.jsx";
 import FriendChessPage from "../pages/PlayPages/FriendChessPage.jsx";
@@ -28,9 +28,9 @@ export const privateRoutes = [
 export const publicRoutes = [
 	{path: '/Tasks', component: TaskPage, exact: true},
 	{path: '/', component: HomePage, exact: true},
-	{path: '/Play/:Online', component: OnlineChessPage, exact: true},
-	{path: '/Play/:Bot', component: BotChessPage, exact: true},
-	{path: '/Play/:Offline', component: OfflineChessPage, exact: true},
+	{path: '/Play/Online', component: OnlineChessPage, exact: true},
+	{path: '/Play/Bot', component: BotChessPage, exact: true},
+	{path: '/Play/Offline', component: OfflineChessPage, exact: true},
 	{path: '/Play', component: PlayPage, exact: true},
 	{path: '/Education', component: EducationPage, exact: true},
 	{path: '/Viewing', component: ViewingPage, exact: true},

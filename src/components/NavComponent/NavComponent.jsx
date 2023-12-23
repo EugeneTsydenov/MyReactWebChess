@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './NavComponents.module.css'
 import NavItemComponent from "../NavItemComponent/NavItemComponent.jsx";
+import {links} from "../../data/NavLinks.js";
 
 const NavComponent = () => {
-	const links = ['Play', 'Tasks', 'Education', 'Viewing', 'Community', 'Instruments']
 	
 	return (
 		<nav>
@@ -11,7 +11,10 @@ const NavComponent = () => {
 				{
 					links.map((link, i) => {
 						return (
-							<NavItemComponent link={link} key={i}/>
+							<NavItemComponent
+								link={link}
+								key={i}
+							/>
 						)
 					})
 				}
