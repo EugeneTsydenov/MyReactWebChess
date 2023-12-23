@@ -1,9 +1,0 @@
-body {
-    font-family: var(--main-font);
-    background-color: var(--primary-black);
-    color: var(--primary-white)
-}
-
-.active {
-    color: var(--secondary-yellow);
-}
