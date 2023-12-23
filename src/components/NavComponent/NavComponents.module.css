@@ -1,0 +1,9 @@
+.List {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+
+.Text {
+    font-size: 20px;
+}

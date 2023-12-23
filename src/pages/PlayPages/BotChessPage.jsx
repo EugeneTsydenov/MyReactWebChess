@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from "../layouts/Layout.jsx";
+import Layout from "../../layouts/Layout.jsx";
 
 const BotChessPage = () => {
 	return (
