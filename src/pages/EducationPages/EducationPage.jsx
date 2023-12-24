@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const EducationPage = () => {
 	return (
 		<Layout>
-			Education
+			<main>
+				Education
+			</main>
 		</Layout>
 	);
 };

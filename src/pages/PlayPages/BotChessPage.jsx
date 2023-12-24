@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const BotChessPage = () => {
 	return (
 		<Layout>
-			Bot
+			<main>
+				Bot
+			</main>
 		</Layout>
 	);
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import NavComponent from "../NavComponent/NavComponent.jsx";
 import searchLoop from '../../assets/images/searchLoop.svg';
 import settings from '../../assets/images/settings.svg';

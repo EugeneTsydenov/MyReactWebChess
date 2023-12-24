@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const ViewingPage = () => {
 	return (
 		<Layout>
-			Viewing
+			<main>
+				Viewing
+			</main>
 		</Layout>
 	);
 };

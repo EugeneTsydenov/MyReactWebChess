@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const InstrumentsPage = () => {
 	return (
 		<Layout>
-			Instruments
+			<main>
+				Instruments
+			</main>
 		</Layout>
 	);
 };

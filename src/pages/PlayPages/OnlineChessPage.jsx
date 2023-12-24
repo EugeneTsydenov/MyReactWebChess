@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const OnlineChessPage = () => {
 	return (
 		<Layout>
-			Online Chess
+			<main>
+				Online Chess
+			</main>
 		</Layout>
 	);
 };

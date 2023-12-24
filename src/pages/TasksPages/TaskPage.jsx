@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const TaskPage = () => {
 	return (
 		<Layout>
-			Tasks
+			<main>
+				Tasks
+			</main>
 		</Layout>
 	);
 };

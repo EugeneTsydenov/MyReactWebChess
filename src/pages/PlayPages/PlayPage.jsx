@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const PlayPage = () => {
 	return (
 		<Layout>
-			Play
+			<main>
+				Play
+			</main>
 		</Layout>
 	);
 };

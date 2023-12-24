@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const FriendChessPage = () => {
 	return (
 		<Layout>
-			Friend
+			<main>
+				Friend
+			</main>
 		</Layout>
 	);
 };

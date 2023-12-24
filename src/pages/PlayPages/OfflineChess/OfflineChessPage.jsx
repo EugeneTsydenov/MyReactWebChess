@@ -1,10 +1,11 @@
-import React from 'react';
-import Layout from "../../layouts/Layout.jsx";
+import Layout from "../../../layouts/Layout.jsx";
 
 const OfflineChessPage = () => {
 	return (
 		<Layout>
-			Offline Chess
+			<main>
+				Offline
+			</main>
 		</Layout>
 	);
 };

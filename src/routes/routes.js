@@ -2,7 +2,7 @@ import HomePage from "../pages/HomePage.jsx";
 import OnlineChessPage from "../pages/PlayPages/OnlineChessPage.jsx";
 import BotChessPage from "../pages/PlayPages/BotChessPage.jsx";
 import FriendChessPage from "../pages/PlayPages/FriendChessPage.jsx";
-import OfflineChessPage from "../pages/PlayPages/OfflineChessPage.jsx";
+import OfflineChessPage from "../pages/PlayPages/OfflineChess/OfflineChessPage.jsx";
 import PlayPage from '../pages/PlayPages/PlayPage.jsx'
 import TaskPage from "../pages/TasksPages/TaskPage.jsx";
 import EducationPage from "../pages/EducationPages/EducationPage.jsx";

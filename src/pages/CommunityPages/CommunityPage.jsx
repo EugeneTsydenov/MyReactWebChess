@@ -4,7 +4,9 @@ import Layout from "../../layouts/Layout.jsx";
 const CommunityPage = () => {
 	return (
 		<Layout>
-			Community
+			<main>
+				Community
+			</main>
 		</Layout>
 	);
 };
