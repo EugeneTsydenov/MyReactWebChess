@@ -1,7 +1,10 @@
 :root {
     --main-font: 'Alegreya Sans SC', sans-serif;
     --primary-black: #110f0f;
-    --primary-white: #bdb7ac;
-    --secondary-yellow: #ffdb5b;
-    --secondary-black: #262626
+    --primary-white: #d9d2d2;
+    --secondary-yellow: #ffdf71;
+    --secondary-black: #262626;
+    --secondary-green: #5f8d51;
+    --secondary-light-green: rgba(39, 96, 21, 0.5);
+    --secondary-red: #fd4343;
 }

@@ -7,4 +7,9 @@ export default class Figure {
 		this.cell.figure = this;
 		this.name = FigureNames.FIGURE
   }
+	
+	canMove(cell) {
+		return this?.color !== cell?.figure?.color &&
+			cell?.figure?.name !== FigureNames.KING;
+	}
 }

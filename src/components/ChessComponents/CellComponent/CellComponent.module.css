@@ -1,5 +1,5 @@
 .CellWhite {
-    background-color: var(--primary-white);
+    background-color: #f0d9b5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 .CellBlack {
-    background-color: rgb(91, 148, 201);
+    background-color: #b58863;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,4 +23,19 @@
 .Figure {
     min-width: 60px;
     min-height: 60px;
+}
+
+.AvailableEmptyCell {
+    width: 17px;
+    height: 17px;
+    background-color: var(--secondary-light-green);
+    border-radius: 50%;
+}
+
+.SelectedCell {
+    background-color: var(--secondary-green);
+}
+
+.AvailableForAttack {
+    background-color: var(--secondary-red);
 }
