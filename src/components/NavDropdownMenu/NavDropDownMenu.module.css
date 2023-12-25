@@ -9,6 +9,7 @@
     flex-direction: column;
     width: 170px;
     background-color: var(--secondary-black);
+    z-index: 2;
 }
 
 .Item {
