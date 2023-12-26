@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './BoardComponent.module.css'
 import {Board} from "../../../entities/Board.js";
 import CellComponent from "../CellComponent/CellComponent.jsx";
@@ -8,14 +8,14 @@ const BoardComponent = () => {
 	
 	
 	useEffect(() => {
-		restart()
+		restartGame()
 	}, []);
 	
 	useEffect(() => {
 		highlightCell()
 	}, [selectedCell])
 	
-	function restart() {
+	function restartGame() {
 		const newBoard = new Board();
 		newBoard.initCells();
 		newBoard.addFigures();
@@ -39,6 +39,7 @@ const BoardComponent = () => {
 			setSelectedCell(cell)
 		}
 	}
+	
 	
 	
 	return (
