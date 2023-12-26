@@ -2,25 +2,12 @@ import React, {useEffect, useState} from 'react';
 import styles from './BoardComponent.module.css'
 import {Board} from "../../../entities/Board.js";
 import CellComponent from "../CellComponent/CellComponent.jsx";
-const BoardComponent = () => {
-	const [board, setBoard] = useState(new Board());
+const BoardComponent = ({board, setBoard}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
-	
-	
-	useEffect(() => {
-		restartGame()
-	}, []);
 	
 	useEffect(() => {
 		highlightCell()
 	}, [selectedCell])
-	
-	function restartGame() {
-		const newBoard = new Board();
-		newBoard.initCells();
-		newBoard.addFigures();
-		setBoard(newBoard);
-	}
 	
 	function highlightCell() {
 		if(selectedCell) {
@@ -39,8 +26,6 @@ const BoardComponent = () => {
 			setSelectedCell(cell)
 		}
 	}
-	
-	
 	
 	return (
 		<section className={styles.Section}>

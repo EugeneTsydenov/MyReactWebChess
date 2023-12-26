@@ -2,7 +2,6 @@ import './styles/App.css'
 import AppRouter from "./routes/AppRouter.jsx";
 
 function App() {
-
   return (
     <AppRouter/>
   )
