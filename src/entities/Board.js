@@ -26,12 +26,12 @@ export class Board {
 		return this.cells[x][y]
 	}
 	
-	highlightCell(targetCell) {
+	highlightCells(targetCell) {
 		for (let i = 0; i < 8; i++) {
 			const row = this.cells[i];
 			for (let j = 0; j < 8; j++) {
 				const cell = row[j];
-				cell.available = !!targetCell?.figure.canMove(cell)
+				cell.available = !!targetCell?.figure?.canMove(cell);
 			}
 		}
 	}

@@ -12,4 +12,6 @@ export default class Figure {
 		return this?.color !== cell?.figure?.color &&
 			cell?.figure?.name !== FigureNames.KING;
 	}
+	
+	moveFigure(cell) {}
 }

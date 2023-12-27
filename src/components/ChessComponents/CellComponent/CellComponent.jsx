@@ -13,16 +13,15 @@ const CellComponent = ({ cell, select, handleClickOnSelectedCell }) => {
 					cell.available && cell.figure && styles.AvailableForAttack
 				].join(' ')
 			}
-		>
-			<button onClick={() => {
+			onClick={() => {
 				handleClickOnSelectedCell(cell);
-			}}>
-				{
-					cell.figure === null ?
+			}}
+		>
+			{
+				cell.figure === null ?
 					'' :
 					<img className={styles.Figure} src={cell.figure.logo} alt={cell.figure.name}/>
-				}
-			</button>
+			}
 			{
 				cell.available &&
 				!cell.figure &&

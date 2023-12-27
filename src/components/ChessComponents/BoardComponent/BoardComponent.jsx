@@ -1,56 +1,59 @@
 import React, {useEffect, useState} from 'react';
-import styles from './BoardComponent.module.css'
-import {Board} from "../../../entities/Board.js";
+import styles from './BoardComponent.module.css';
 import CellComponent from "../CellComponent/CellComponent.jsx";
+import PropTypes from "prop-types";
 const BoardComponent = ({board, setBoard}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
 	
+	function handleClickOnSelectedCell(cell) {
+		if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+			selectedCell.moveFigure(cell);
+			setSelectedCell(null);
+			updateBoard();
+		} else {
+			if(cell.figure) {
+				setSelectedCell(cell);
+			}
+		}
+	}
+	
 	useEffect(() => {
-		highlightCell()
+		highlightCells();
 	}, [selectedCell])
 	
-	function highlightCell() {
-		if(selectedCell) {
-			board.highlightCell(selectedCell);
-		}
-		updateBoard()
+	function highlightCells() {
+		board.highlightCells(selectedCell);
+		updateBoard();
 	}
 	
 	function updateBoard() {
 		const newBoard = board.getCopyBoard();
-		setBoard(newBoard)
-	}
-	
-	function handleClickOnSelectedCell(cell) {
-		if(cell.figure) {
-			setSelectedCell(cell)
-		}
+		setBoard(newBoard);
 	}
 	
 	return (
-		<section className={styles.Section}>
-			<div className='container'>
-				<div className={styles.Wrapper}>
-					<div className={[styles.Board, 'unselectable'].join(' ')}>
-						{
-							board.cells.map((row) => {
-								return row.map((cell) => {
-									return (
-										<CellComponent
-											key={cell.id}
-											cell={cell}
-											select={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
-											handleClickOnSelectedCell={handleClickOnSelectedCell}
-										/>
-									)
-								})
-							})
-						}
-					</div>
-				</div>
-			</div>
-		</section>
+		<div className={[styles.Board, 'unselectable'].join(' ')}>
+			{
+				board.cells.map((row) => {
+					return row.map((cell) => {
+						return (
+							<CellComponent
+								key={cell.id}
+								cell={cell}
+								select={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
+								handleClickOnSelectedCell={handleClickOnSelectedCell}
+							/>
+						)
+					})
+				})
+			}
+		</div>
 	);
 };
+
+BoardComponent.propTypes = {
+	board: PropTypes.object.isRequired,
+	setBoard: PropTypes.func.isRequired
+}
 
 export default BoardComponent;
