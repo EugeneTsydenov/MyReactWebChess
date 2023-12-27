@@ -4,7 +4,6 @@ import CellComponent from "../CellComponent/CellComponent.jsx";
 import PropTypes from "prop-types";
 const BoardComponent = ({board, setBoard}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
-	
 	function handleClickOnSelectedCell(cell) {
 		if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
 			selectedCell.moveFigure(cell);
@@ -18,12 +17,12 @@ const BoardComponent = ({board, setBoard}) => {
 	}
 	
 	useEffect(() => {
-		highlightCells();
+		highlightCells()
 	}, [selectedCell])
 	
 	function highlightCells() {
-		board.highlightCells(selectedCell);
-		updateBoard();
+		board.highlightCells(selectedCell)
+		updateBoard()
 	}
 	
 	function updateBoard() {
@@ -32,8 +31,8 @@ const BoardComponent = ({board, setBoard}) => {
 	}
 	
 	return (
-		<div className={[styles.Board, 'unselectable'].join(' ')}>
-			{
+		<div className={[styles.Board].join(" ")}>
+			{board && (
 				board.cells.map((row) => {
 					return row.map((cell) => {
 						return (
@@ -46,9 +45,10 @@ const BoardComponent = ({board, setBoard}) => {
 						)
 					})
 				})
-			}
+			)}
 		</div>
 	);
+	
 };
 
 BoardComponent.propTypes = {

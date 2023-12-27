@@ -27,6 +27,7 @@ export class Board {
 	}
 	
 	highlightCells(targetCell) {
+		if(this.cells.length === 0) return false
 		for (let i = 0; i < 8; i++) {
 			const row = this.cells[i];
 			for (let j = 0; j < 8; j++) {
