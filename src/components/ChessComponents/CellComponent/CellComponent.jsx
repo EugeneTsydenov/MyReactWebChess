@@ -41,7 +41,12 @@ const CellComponent = ({ cell, select, handleClickOnSelectedCell, selectedCell, 
 CellComponent.propTypes = {
 	cell: PropTypes.object.isRequired,
 	select: PropTypes.bool.isRequired,
-	handleClickOnSelectedCell: PropTypes.func.isRequired
-}
+	handleClickOnSelectedCell: PropTypes.func.isRequired,
+	selectedCell: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.oneOf([null]),
+	]).isRequired,
+	handleClickOnCellToMove: PropTypes.func.isRequired,
+};
 
 export default CellComponent;

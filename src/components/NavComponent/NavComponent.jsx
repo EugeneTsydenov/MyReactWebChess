@@ -4,7 +4,6 @@ import NavItemComponent from "../NavItemComponent/NavItemComponent.jsx";
 import {links} from "../../data/NavLinks.js";
 
 const NavComponent = () => {
-	
 	return (
 		<nav>
 			<ul className={styles.List}>

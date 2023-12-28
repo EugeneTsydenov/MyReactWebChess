@@ -2,14 +2,17 @@ import React, {useEffect, useState} from 'react';
 import styles from './BoardComponent.module.css';
 import CellComponent from "../CellComponent/CellComponent.jsx";
 import PropTypes from "prop-types";
-const BoardComponent = ({board, setBoard}) => {
+const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
 	function handleClickOnSelectedCell(cell) {
-		setSelectedCell(cell);
+		if (cell.figure?.color === currentPlayer?.color) {
+			setSelectedCell(cell);
+		}
 	}
 	
 	function handleClickOnCellToMove(cell) {
 		selectedCell.moveFigure(cell);
+		swapPlayer()
 		setSelectedCell(null);
 		updateBoard();
 	}
@@ -54,7 +57,12 @@ const BoardComponent = ({board, setBoard}) => {
 
 BoardComponent.propTypes = {
 	board: PropTypes.object.isRequired,
-	setBoard: PropTypes.func.isRequired
+	setBoard: PropTypes.func.isRequired,
+	swapPlayer: PropTypes.func.isRequired,
+	currentPlayer: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.oneOf([null]),
+	]),
 }
 
 export default BoardComponent;
