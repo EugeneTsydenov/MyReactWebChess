@@ -5,16 +5,15 @@ import PropTypes from "prop-types";
 const BoardComponent = ({board, setBoard}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
 	function handleClickOnSelectedCell(cell) {
-		if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
-			selectedCell.moveFigure(cell);
-			setSelectedCell(null);
-			updateBoard();
-		} else {
-			if(cell.figure) {
-				setSelectedCell(cell);
-			}
-		}
+		setSelectedCell(cell);
 	}
+	
+	function handleClickOnCellToMove(cell) {
+		selectedCell.moveFigure(cell);
+		setSelectedCell(null);
+		updateBoard();
+	}
+	
 	
 	useEffect(() => {
 		highlightCells()
@@ -41,6 +40,8 @@ const BoardComponent = ({board, setBoard}) => {
 								cell={cell}
 								select={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
 								handleClickOnSelectedCell={handleClickOnSelectedCell}
+								selectedCell={selectedCell}
+								handleClickOnCellToMove={handleClickOnCellToMove}
 							/>
 						)
 					})

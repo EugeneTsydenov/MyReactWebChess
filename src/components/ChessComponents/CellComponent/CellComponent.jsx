@@ -3,7 +3,7 @@ import styles from './CellComponent.module.css'
 import PropTypes from "prop-types";
 import {Colors} from "../../../data/Colors.js";
 
-const CellComponent = ({ cell, select, handleClickOnSelectedCell }) => {
+const CellComponent = ({ cell, select, handleClickOnSelectedCell, selectedCell, handleClickOnCellToMove }) => {
 	return (
 		<div
 			className={
@@ -14,7 +14,13 @@ const CellComponent = ({ cell, select, handleClickOnSelectedCell }) => {
 				].join(' ')
 			}
 			onClick={() => {
-				handleClickOnSelectedCell(cell);
+				if(selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+					handleClickOnCellToMove(cell)
+				} else {
+					if(cell.figure) {
+						handleClickOnSelectedCell(cell);
+					}
+				}
 			}}
 		>
 			{

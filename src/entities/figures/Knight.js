@@ -12,9 +12,7 @@ export class Knight extends Figure {
 	}
 	
 	canMove(cell) {
-		if(!super.canMove(cell)) {
-			return false
-		}
+		if(!super.canMove(cell)) return false;
 		
 		const hypotenuse = Math.sqrt(4 + 1);
 		

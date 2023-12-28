@@ -10,4 +10,14 @@ export class Rook extends Figure {
 		this.color = color;
 		this.logo = this.color === Colors.BLACK ? blackFigure : whiteFigure;
 	}
+	
+	canMove(cell) {
+		if(!super.canMove(cell)) return false;
+		
+		if(this.cell.isEmptyVertical(cell) || this.cell.isEmptyHorizontal(cell)) {
+			return true
+		}
+		
+		return false;
+	}
 }

@@ -23,7 +23,7 @@ export class Board {
 	}
 	
 	getCell(x, y) {
-		return this.cells[x][y]
+		return this.cells[y][x]
 	}
 	
 	highlightCells(targetCell) {
@@ -54,39 +54,39 @@ export class Board {
 	
 	addPawn() {
 		for(let i = 0; i < 8; i++) {
-			new Pawn(this.getCell(6, i), Colors.WHITE);
-			new Pawn(this.getCell(1, i), Colors.BLACK);
+			new Pawn(this.getCell(i, 6), Colors.WHITE);
+			new Pawn(this.getCell(i, 1), Colors.BLACK);
 		}
 	}
 	
 	addKnight() {
-		new Knight(this.getCell(7, 1), Colors.WHITE);
-		new Knight(this.getCell(7, 6), Colors.WHITE);
-		new Knight(this.getCell(0, 1), Colors.BLACK);
-		new Knight(this.getCell(0, 6), Colors.BLACK);
+		new Knight(this.getCell(1, 7), Colors.WHITE);
+		new Knight(this.getCell(6, 7), Colors.WHITE);
+		new Knight(this.getCell(1, 0), Colors.BLACK);
+		new Knight(this.getCell(6, 0), Colors.BLACK);
 	}
 	
 	addBishop() {
-		new Bishop(this.getCell(7, 2), Colors.WHITE);
-		new Bishop(this.getCell(7, 5), Colors.WHITE);
-		new Bishop(this.getCell(0, 2), Colors.BLACK);
-		new Bishop(this.getCell(0, 5), Colors.BLACK);
+		new Bishop(this.getCell(2, 7), Colors.WHITE);
+		new Bishop(this.getCell(5, 7), Colors.WHITE);
+		new Bishop(this.getCell(2, 0), Colors.BLACK);
+		new Bishop(this.getCell(5, 0), Colors.BLACK);
 	}
 	
 	addRook() {
-		new Rook(this.getCell(7, 0), Colors.WHITE);
+		new Rook(this.getCell(0, 7), Colors.WHITE);
 		new Rook(this.getCell(7, 7), Colors.WHITE);
 		new Rook(this.getCell(0, 0), Colors.BLACK);
-		new Rook(this.getCell(0, 7), Colors.BLACK);
+		new Rook(this.getCell(7, 0), Colors.BLACK);
 	}
 	
 	addQueen() {
-		new Queen(this.getCell(7, 4), Colors.WHITE);
-		new Queen(this.getCell(0, 4), Colors.BLACK);
+		new Queen(this.getCell(4, 7), Colors.WHITE);
+		new Queen(this.getCell(4, 0), Colors.BLACK);
 	}
 	
 	addKing() {
-		new King(this.getCell(7, 3), Colors.WHITE);
-		new King(this.getCell(0, 3), Colors.BLACK);
+		new King(this.getCell(3, 7), Colors.WHITE);
+		new King(this.getCell(3, 0), Colors.BLACK);
 	}
 }
