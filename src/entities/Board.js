@@ -8,6 +8,7 @@ import {Queen} from "./figures/Queen.js";
 import {King} from "./figures/King.js";
 
 export class Board {
+	isCheck= false;
 	cells = [];
 	
 	initCells() {

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import {FigureNames} from "../data/FigureNames.js";
 
 export class Cell {
   constructor(x, y, figure, board, color) {
@@ -8,10 +9,11 @@ export class Cell {
 		this.board = board;
 		this.color = color;
 		this.available = false;
-		this.id = uuidv4()
+		this.id = uuidv4();
   }
 	
 	isEmpty() {
+		if(this.figure?.name === FigureNames.KING) this.board.isCheck = true;
 		return this.figure === null;
 	}
 	

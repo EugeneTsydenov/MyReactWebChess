@@ -2,8 +2,8 @@ export const FigureNames = {
 	FIGURE: 'Figure',
 	BISHOP: 'Bishop',
 	ROOK: 'Rook',
-	HORSE: 'Horse',
+	KNIGHT: 'Knight',
 	PAWN: 'Pawn',
 	QUEEN: 'Queen',
-	KING: 'King'
+	KING: 'King',
 };

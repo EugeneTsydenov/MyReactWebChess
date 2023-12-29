@@ -2,6 +2,7 @@ import Figure from "../Figure.js";
 import {Colors} from "../../data/Colors.js";
 import blackFigure from '../../assets/images/black-pawn.svg';
 import whiteFigure from '../../assets/images/white-pawn.svg';
+import {FigureNames} from "../../data/FigureNames.js";
 
 export class Pawn extends Figure {
 	isFirstStep = true
@@ -11,6 +12,7 @@ export class Pawn extends Figure {
 		this.isFirstStep = true;
 		this.cell = cell;
 		this.color = color;
+		this.name = FigureNames.PAWN;
 		this.logo = this.color === Colors.BLACK ? blackFigure : whiteFigure;
 	}
 	
