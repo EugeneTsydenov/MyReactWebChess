@@ -34,17 +34,19 @@ export class Pawn extends Figure {
 			return true
 		}
 		
-		if(
-			(
-				target.y === this.cell.y + direction &&
-				(target.x === this.cell.x + 1 || target.x === this.cell.x - 1) &&
-				this.cell.isEnemy(target)
-			)
-		) {
-			return true
-		}
+		if(this.canEatFigure(target)) return true;
 		
 		return false;
+	}
+	
+	canEatFigure(target) {
+		const direction = this.cell.figure?.color === Colors.BLACK ? 1 : -1;
+		
+		return (
+			target.y === this.cell.y + direction &&
+			(target.x === this.cell.x + 1 || target.x === this.cell.x - 1) &&
+			this.cell.isEnemy(target)
+		);
 	}
 	
 	moveFigure(cell) {

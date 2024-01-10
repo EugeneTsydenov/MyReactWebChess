@@ -11,7 +11,7 @@ export default class Figure {
 	canMove(cell) {
 		if(cell.figure?.color === this.color) return false;
 		
-		return cell.figure?.name !== FigureNames.KING;
+		return true;
 	}
 	
 	moveFigure(cell) {}

@@ -26,7 +26,6 @@ export class King extends Figure {
 		}
 		
 		if(this.isAttack(target)) return false;
-
 		if(!this.isAttack(target)) return true;
 		
 		return true
@@ -38,12 +37,17 @@ export class King extends Figure {
 			for (let j = 0; j < row.length; j++) {
 				let cell = row[j];
 				if (cell.figure !== null && cell.figure.color !== this.color) {
-					if (cell.figure.canMove(target)) {
-						return true;
+					if (cell.figure.name === FigureNames.PAWN) {
+						return !!cell.figure.canEatFigure(target);
+					}
+					if (cell.figure.name !== FigureNames.PAWN) {
+						return !!cell.figure.canMove(target);
 					}
 				}
 			}
 		}
 		return false;
 	}
+	
+	
 }

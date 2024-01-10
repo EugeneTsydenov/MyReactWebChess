@@ -1,0 +1,22 @@
+.Timer {
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+}
+
+.Wrapper {
+    padding: 5px 10px;
+}
+
+.TimeText {
+    font-weight: 500;
+    font-size: 60px;
+}
+
+.CurrMove {
+    background-color: var(--secondary-green);
+}
+
+.NoCurrMove {
+    background-color: var(--secondary-black);
+}

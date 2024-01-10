@@ -17,6 +17,7 @@ export class Board {
 			for(let j = 0; j < 8; j++) {
 				((i + j) % 2 === 0) ?
 					row.push(new Cell(j, i, null, this, Colors.WHITE)) :
+	
 					row.push(new Cell(j, i, null, this, Colors.BLACK))
 			}
 			this.cells.push(row)
@@ -37,7 +38,6 @@ export class Board {
 			}
 		}
 	}
-	
 	getCopyBoard() {
 		const newBoard = new Board();
 		newBoard.cells = this.cells.map(row => [...row]);

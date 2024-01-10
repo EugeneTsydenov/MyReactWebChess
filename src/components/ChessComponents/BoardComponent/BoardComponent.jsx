@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './BoardComponent.module.css';
 import CellComponent from "../CellComponent/CellComponent.jsx";
 import PropTypes from "prop-types";
+import movingSound from '../../../assets/sounds/movingSound.mp3'
 const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
 	function handleClickOnSelectedCell(cell) {
@@ -14,6 +15,7 @@ const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 		selectedCell.moveFigure(cell);
 		swapPlayer()
 		setSelectedCell(null);
+		playSoundMoving()
 		updateBoard();
 	}
 	
@@ -31,6 +33,13 @@ const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 		const newBoard = board.getCopyBoard();
 		setBoard(newBoard);
 	}
+	
+	function playSoundMoving() {
+		const sound = new Audio(movingSound);
+		sound.volume = 0.2;
+		sound.play()
+	}
+	
 	
 	return (
 		<div className={[styles.Board].join(" ")}>

@@ -80,6 +80,7 @@ export class Cell {
 		}
 	}
 	
+	
 	setFigure(figure) {
 		this.figure = figure;
 		this.figure.cell = this;
