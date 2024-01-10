@@ -5,6 +5,8 @@ import styles from "./WrapperBoardComponent.module.css";
 import Player from "../../../entities/Player.js";
 import {Colors} from "../../../data/Colors.js";
 import Timer from "../Timer/Timer.jsx";
+import WhiteLostFigures from "../LostFigures/WhiteLostFigures/WhiteLostFigures.jsx";
+import BlackLostFigures from "../LostFigures/BlackLostFigures/BlackLostFigures.jsx";
 
 const WrapperBoardComponent = () => {
 	const [board, setBoard] = useState(new Board());
@@ -39,10 +41,12 @@ const WrapperBoardComponent = () => {
 				currentPlayer={currentPlayer}
 				swapPlayer={swapPlayer}
 			/>
-			<div>
+			<div className={styles.LeftWrapper}>
+				<BlackLostFigures board={board}/>
 				<Timer
 					currentPlayer={currentPlayer}
 				/>
+				<WhiteLostFigures board={board}/>
 			</div>
 		</div>
 	)

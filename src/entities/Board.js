@@ -8,7 +8,8 @@ import {Queen} from "./figures/Queen.js";
 import {King} from "./figures/King.js";
 
 export class Board {
-	isCheck= false;
+	lostBlackFigures = new Map();
+	lostWhiteFigures = new Map();
 	cells = [];
 	
 	initCells() {
@@ -41,6 +42,8 @@ export class Board {
 	getCopyBoard() {
 		const newBoard = new Board();
 		newBoard.cells = this.cells.map(row => [...row]);
+		newBoard.lostWhiteFigures = this.lostWhiteFigures
+		newBoard.lostBlackFigures = this.lostBlackFigures
 		return newBoard;
 	}
 	

@@ -1,16 +1,19 @@
 .Timer {
     display: flex;
     flex-direction: column;
+    max-width: 140px;
     gap: 250px;
 }
 
 .Wrapper {
-    padding: 5px 10px;
+    padding: 5px 5px 5px 10px;
 }
 
 .TimeText {
     font-weight: 500;
     font-size: 60px;
+    display: block;
+    min-width: 130px;
 }
 
 .CurrMove {

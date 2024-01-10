@@ -6,3 +6,11 @@
     min-height: 100%;
     gap: 50px;
 }
+
+.LeftWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--secondary-black);
+    padding: 10px;
+}

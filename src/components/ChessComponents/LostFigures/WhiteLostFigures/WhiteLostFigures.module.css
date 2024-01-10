@@ -1,0 +1,28 @@
+.List {
+    display: flex;
+    gap: 5px;
+}
+
+.Item {
+    position: relative;
+    min-width: 37px;
+}
+
+.Wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.Img {
+    width: 30px;
+    height: 30px;
+}
+
+.X {
+    font-size: 11px;
+}
+
+.Num {
+    font-size: 15px;
+}

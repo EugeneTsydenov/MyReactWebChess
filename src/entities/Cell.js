@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import {FigureNames} from "../data/FigureNames.js";
+import {Colors} from "../data/Colors.js";
 
 export class Cell {
   constructor(x, y, figure, board, color) {
@@ -72,10 +73,34 @@ export class Cell {
 		return true
 	}
 	
+	addLostFigure(figure) {
+		if (figure.color === Colors.BLACK) {
+			const mapLostBlackFigures = this.board.lostBlackFigures;
+			if (mapLostBlackFigures.has(figure.logo)) {
+				const count = mapLostBlackFigures.get(figure.logo);
+				mapLostBlackFigures.set(figure.logo, count + 1);
+			} else {
+				mapLostBlackFigures.set(figure.logo, 1);
+			}
+		} else {
+			const mapLostWhiteFigures = this.board.lostWhiteFigures;
+			if (mapLostWhiteFigures.has(figure.logo)) {
+				const count = mapLostWhiteFigures.get(figure.logo);
+				mapLostWhiteFigures.set(figure.logo, count + 1);
+			} else {
+				mapLostWhiteFigures.set(figure.logo, 1);
+			}
+		}
+	}
+	
 	moveFigure(target) {
 		if(this.figure && this.figure.canMove(target)) {
-			this.figure?.moveFigure(target);
+			if (target && target.figure && this.figure.color !== target.figure.color) {
+				this.addLostFigure(target.figure);
+			}
+			
 			target.setFigure(this.figure);
+			this.figure.moveFigure(target);
 			this.figure = null;
 		}
 	}
