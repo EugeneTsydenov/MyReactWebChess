@@ -49,6 +49,13 @@ export class Pawn extends Figure {
 		);
 	}
 	
+	promotePawn(newFigure) {
+		newFigure.cell = this.cell;
+		this.cell.figure = newFigure;
+		this.name = newFigure.name;
+		this.logo = newFigure.logo
+	}
+	
 	moveFigure(cell) {
 		super.moveFigure(cell);
 		this.isFirstStep = false

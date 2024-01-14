@@ -65,7 +65,7 @@ const Timer = React.memo(({currentPlayer}) => {
 });
 
 Timer.propTypes = {
-	currentPlayer: PropTypes.object.isRequired
+	currentPlayer: PropTypes.any.isRequired
 }
 
 Timer.displayName = 'Timer';

@@ -3,8 +3,11 @@ import styles from './BoardComponent.module.css';
 import CellComponent from "../CellComponent/CellComponent.jsx";
 import PropTypes from "prop-types";
 import movingSound from '../../../assets/sounds/movingSound.mp3'
+import {FigureNames} from "../../../data/FigureNames.js";
 const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 	const [selectedCell, setSelectedCell] = useState(null);
+	const [pawnEndOfBoard, setPawnEndOfBoard] = useState(null);
+	
 	function handleClickOnSelectedCell(cell) {
 		if (cell.figure?.color === currentPlayer?.color) {
 			setSelectedCell(cell);
@@ -13,12 +16,15 @@ const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 	
 	function handleClickOnCellToMove(cell) {
 		selectedCell.moveFigure(cell);
-		swapPlayer()
 		setSelectedCell(null);
-		playSoundMoving()
+		playSoundMoving();
+		if((cell.y === 7 || cell.y === 0) && cell.figure?.name === FigureNames.PAWN) {
+			setPawnEndOfBoard(cell);
+		} else {
+			swapPlayer()
+		}
 		updateBoard();
 	}
-	
 	
 	useEffect(() => {
 		highlightCells()
@@ -40,26 +46,36 @@ const BoardComponent = ({board, setBoard, currentPlayer, swapPlayer}) => {
 		sound.play()
 	}
 	
+	function changePawn(newFigure) {
+		pawnEndOfBoard.figure.promotePawn(newFigure);
+		setPawnEndOfBoard(null);
+		swapPlayer();
+	}
+	
 	
 	return (
-		<div className={[styles.Board].join(" ")}>
-			{board && (
-				board.cells.map((row) => {
-					return row.map((cell) => {
-						return (
-							<CellComponent
-								key={cell.id}
-								cell={cell}
-								select={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
-								handleClickOnSelectedCell={handleClickOnSelectedCell}
-								selectedCell={selectedCell}
-								handleClickOnCellToMove={handleClickOnCellToMove}
-							/>
-						)
+		<>
+			<div className={[styles.Board, 'unselectable'].join(" ")}>
+				{board && (
+					board.cells.map((row) => {
+						return row.map((cell) => {
+							return (
+								<CellComponent
+									key={cell.id}
+									cell={cell}
+									select={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
+									handleClickOnSelectedCell={handleClickOnSelectedCell}
+									selectedCell={selectedCell}
+									handleClickOnCellToMove={handleClickOnCellToMove}
+									pawnEndOfBoard={pawnEndOfBoard}
+									changePawn={changePawn}
+								/>
+							)
+						})
 					})
-				})
-			)}
-		</div>
+				)}
+			</div>
+		</>
 	);
 	
 };
